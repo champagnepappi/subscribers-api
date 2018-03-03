@@ -10,6 +10,9 @@ users = [
 ]
 
 subscriber_request_parser = RequestParser(bundle_errors=True)
+subscriber_request_parser.add_argument("name", type=str, required=True, help="Name has to be valid string")
+subscriber_request_parser.add_argument("email", required=True)
+subscriber_request_parser.add_argument("id", type=int, required=True, help="Please enter valid integer as ID")
 
 class SubscriberCollection(Resource):
     def get(self):
