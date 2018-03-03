@@ -8,9 +8,11 @@ users = [
     {"email": "sant@gmail.com", "name": "Saint Kay", "id": 1}
 ]
 
-class HelloWorld(Resource):
+class SubscriberCollection(Resource):
     def get(self):
-        return {'hello' : 'world'}
+        return {"msg": "All subscribers"}
+
+
 
 api.add_resource(HelloWorld, '/')
 
