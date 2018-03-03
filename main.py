@@ -9,6 +9,8 @@ users = [
     {"email": "sant@gmail.com", "name": "Saint Kay", "id": 1}
 ]
 
+subscriber_request_parser = RequestParser(bundle_errors=True)
+
 class SubscriberCollection(Resource):
     def get(self):
         return {"msg": "All subscribers"}
