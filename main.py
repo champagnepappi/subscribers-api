@@ -19,7 +19,9 @@ class SubscriberCollection(Resource):
         return users
 
     def post(self):
-        return {"msg": "We will create new subscribers here"}
+        args = subscriber_request_parser.parse_args()
+        users.append(args)
+        return {"msg": "Subscriber added", "subscriber": args}
 
 class Subscriber(Resource):
     def get(self, id):
