@@ -30,7 +30,10 @@ class SubscriberCollection(Resource):
 
 class Subscriber(Resource):
     def get(self, id):
-        return {"msg": "Details about user id {}".format(id)}
+        user = get_user_by_id(id)
+        if not user:
+            return {"error": "User not found"}
+        return user
 
     def put(self, id):
         return {"msg": "Update user id {}".format(id)}
