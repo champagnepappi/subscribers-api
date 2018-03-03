@@ -9,6 +9,11 @@ users = [
     {"email": "sant@gmail.com", "name": "Saint Kay", "id": 1}
 ]
 
+def get_user_by_id(user_id):
+    for x in users:
+        if x.get("id") == int(user_id):
+            return x
+
 subscriber_request_parser = RequestParser(bundle_errors=True)
 subscriber_request_parser.add_argument("name", type=str, required=True, help="Name has to be valid string")
 subscriber_request_parser.add_argument("email", required=True)
