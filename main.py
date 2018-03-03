@@ -27,7 +27,8 @@ class Subscriber(Resource):
 
 
 
-api.add_resource(HelloWorld, '/')
+api.add_resource(SubscriberCollection, '/subscribers')
+api.add_resource(Subscriber, '/subcribers/<int:id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
