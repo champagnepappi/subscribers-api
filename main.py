@@ -15,6 +15,10 @@ class SubscriberCollection(Resource):
     def post(self):
         return {"msg": "We will create new subscribers here"}
 
+class Subscriber(Resource):
+    def get(self, id):
+        return {"msg": "Details about user id {}".format(id)}
+
 
 
 api.add_resource(HelloWorld, '/')
