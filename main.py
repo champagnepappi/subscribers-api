@@ -19,6 +19,9 @@ class Subscriber(Resource):
     def get(self, id):
         return {"msg": "Details about user id {}".format(id)}
 
+    def put(self, id):
+        return {"msg": "Update user id {}".format(id)}
+
 
 
 api.add_resource(HelloWorld, '/')
