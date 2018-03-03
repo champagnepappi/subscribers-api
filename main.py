@@ -16,7 +16,7 @@ subscriber_request_parser.add_argument("id", type=int, required=True, help="Plea
 
 class SubscriberCollection(Resource):
     def get(self):
-        return {"msg": "All subscribers"}
+        return users
 
     def post(self):
         return {"msg": "We will create new subscribers here"}
