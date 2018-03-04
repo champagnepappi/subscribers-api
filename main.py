@@ -44,7 +44,10 @@ class Subscriber(Resource):
         return user
 
     def delete(self, id):
-        return {"msg": "Delete user id {}".format(id)}
+        user = get_user_by_id(id)
+        if user:
+            users.remove(user)
+            return {"message": "Deleted"}
 
 
 
