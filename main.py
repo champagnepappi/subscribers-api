@@ -36,7 +36,12 @@ class Subscriber(Resource):
         return user
 
     def put(self, id):
-        return {"msg": "Update user id {}".format(id)}
+        args = subscriber_request_parser.parse_args()
+        user = get_user_by_id(id)
+        if user:
+            users.remove(user)
+            users.append(args)
+        return user
 
     def delete(self, id):
         return {"msg": "Delete user id {}".format(id)}
