@@ -26,7 +26,7 @@ class SubscriberCollection(Resource):
     def post(self):
         args = subscriber_request_parser.parse_args()
         users.append(args)
-        return {"msg": "Subscriber added", "subscriber": args}
+        return {"msg": "Subscriber added", "subscriber": args}, 201
 
 class Subscriber(Resource):
     def get(self, id):
@@ -47,7 +47,7 @@ class Subscriber(Resource):
         user = get_user_by_id(id)
         if user:
             users.remove(user)
-            return {"message": "Deleted"}
+        return {"message": "Deleted"}, 204
 
 
 
